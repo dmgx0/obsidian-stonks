@@ -1,0 +1,59 @@
+/* All colours come from Obsidian CSS variables so the plugin follows the
+   active theme in both light and dark modes. No hardcoded hex. */
+
+.stonks-inline {
+	font-variant-numeric: tabular-nums;
+	white-space: nowrap;
+}
+
+.stonks-loading {
+	color: var(--text-muted);
+}
+
+.stonks-error {
+	color: var(--text-error);
+	cursor: help;
+}
+
+/* Mixed-currency result: shown but flagged as ambiguous. */
+.stonks-warn {
+	color: var(--text-warning);
+	cursor: help;
+}
+
+/* Transient failure (rate-limited / offline): muted, will retry. */
+.stonks-stale {
+	color: var(--text-muted);
+	cursor: help;
+}
+
+.stonks-up {
+	color: var(--color-green);
+}
+
+.stonks-down {
+	color: var(--color-red);
+}
+
+/* Settings tab: inline validation feedback (empty text renders nothing). */
+.stonks-setting-error {
+	color: var(--text-error);
+	font-size: var(--font-ui-smaller);
+	margin-top: var(--size-4-1);
+}
+
+.stonks-setting-warn {
+	color: var(--text-warning);
+	font-size: var(--font-ui-smaller);
+	margin-top: var(--size-4-1);
+}
+
+.stonks-input-invalid {
+	border-color: var(--text-error) !important;
+}
+
+/* Autocomplete rows: muted second line with the hint / cached price / value. */
+.stonks-suggest-detail {
+	font-size: var(--font-ui-smaller);
+	color: var(--text-muted);
+}

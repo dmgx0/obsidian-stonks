@@ -1,0 +1,38 @@
+name: Release
+
+# Push a version tag (e.g. `git tag 1.0.0 && git push origin 1.0.0`) to build
+# the plugin and open a DRAFT GitHub release with the three install assets
+# attached. Review the draft, add notes, then publish — that published release
+# is what BRAT and the community store install from.
+
+on:
+  push:
+    tags:
+      - "*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+          cache: "npm"
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+      - name: Create draft release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          tag="${GITHUB_REF#refs/tags/}"
+          gh release create "$tag" \
+            --title="$tag" \
+            --draft \
+            --generate-notes \
+            main.js manifest.json styles.css

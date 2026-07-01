@@ -1,0 +1,41 @@
+{
+	"name": "stonks",
+	"version": "1.0.0",
+	"description": "Show live stock, ETF, and crypto prices inline in Obsidian, and do light math on quotes to track your own portfolio.",
+	"main": "main.js",
+	"type": "module",
+	"scripts": {
+		"dev": "node esbuild.config.mjs",
+		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+		"example": "npm run build && node scripts/link-example-vault.mjs",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"version": "node version-bump.mjs && git add manifest.json versions.json",
+		"lint": "eslint ."
+	},
+	"keywords": [
+		"obsidian-plugin",
+		"stocks",
+		"crypto",
+		"finance",
+		"portfolio"
+	],
+	"license": "MIT",
+	"devDependencies": {
+		"@codemirror/language": "^6.10.8",
+		"@codemirror/state": "6.5.0",
+		"@codemirror/view": "^6.36.4",
+		"@eslint/js": "^9.39.4",
+		"@types/node": "^22.15.17",
+		"esbuild": "0.25.5",
+		"eslint": "^9.39.4",
+		"eslint-plugin-obsidianmd": "^0.3.0",
+		"globals": "^17.6.0",
+		"jiti": "^2.6.1",
+		"jsdom": "^25.0.1",
+		"obsidian": "latest",
+		"typescript": "^5.8.3",
+		"typescript-eslint": "^8.59.1",
+		"vitest": "^3.2.4"
+	}
+}
