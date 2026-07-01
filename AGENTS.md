@@ -41,8 +41,11 @@ into pure, Obsidian-free modules with the Obsidian layer kept thin around them.
 
 ## Testing
 
-- Pure modules (`eval`, `cache`, `currency`, `format`, `modifiers`, `vars`,
-  `suggest`) have colocated `src/*.test.ts` files and run in plain node.
+- Pure modules (`eval`, `cache`, `currency`, `format`, `modifiers`, `vars`)
+  have colocated `src/*.test.ts` files and run in plain node. `suggest.test.ts`
+  is colocated too: its classifier and suggestion sources are pure functions,
+  but the module itself imports `obsidian` for the `EditorSuggest` shell, which
+  resolves against the mock.
 - DOM/Obsidian-facing tests live in `test/`: vitest aliases `obsidian` →
   `test/mocks/obsidian.ts`, jsdom is enabled per-file, and `test/setup/dom.ts`
   shims Obsidian's `HTMLElement` helpers (`createEl`, `setText`, …).
@@ -72,7 +75,9 @@ into pure, Obsidian-free modules with the Obsidian layer kept thin around them.
 ## Release
 
 Push a version tag (`git tag 1.0.0 && git push origin 1.0.0`) →
-`.github/workflows/release.yml` runs lint/test/build and opens a **draft**
-GitHub release with `main.js`, `manifest.json`, `styles.css` attached. Review,
-add notes from `CHANGELOG.md`, publish. `manifest.json` version must equal the
-tag (no `v` prefix); `npm version` keeps the three version files in sync.
+`.github/workflows/release.yml` runs lint/test/build, attests the assets
+(GitHub artifact attestations), and opens a **draft** GitHub release with
+`main.js`, `manifest.json`, `styles.css` attached. Review, add notes from
+`CHANGELOG.md`, publish. `manifest.json` version must equal the tag (no `v`
+prefix); `npm version` keeps the three version files in sync. The community
+directory picks up published releases automatically.

@@ -12,6 +12,9 @@ Hover any value to see the ticker, exact price, day change and last-updated time
 
 Tickers are whatever Yahoo Finance understands: plain symbols, `.EXCHANGE` suffixes (`VWRA.L`), crypto pairs (`BTC-USD`), indices (`^GSPC`).
 
+> [!tip] Autocomplete
+> Start typing inside a `$:` span and Stonks suggests tickers you've already used (with their cached prices), `.fields` after a dot, `|` modifiers after a pipe, and `@variables` from your properties.
+
 ## Fields
 A bare ticker is the price; add a dot-field for more:
 

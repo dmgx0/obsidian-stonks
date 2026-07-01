@@ -149,7 +149,9 @@ Stonks fetches price quotes from **Yahoo Finance** (`query1.finance.yahoo.com`).
 
 ## Install
 
-While in beta, install via **[BRAT](https://github.com/TfTHacker/obsidian42-brat)** (point it at this repo) or manually: copy `main.js`, `manifest.json`, and `styles.css` into `<vault>/.obsidian/plugins/stonks/` and enable it in **Settings → Community plugins**.
+- **Community plugin store** — search for *Stonks* in **Settings → Community plugins** (listing pending review).
+- **[BRAT](https://github.com/TfTHacker/obsidian42-brat)** — add `dmgx0/obsidian-stonks` as a beta plugin.
+- **Manual** — copy `main.js`, `manifest.json`, and `styles.css` from the [latest release](https://github.com/dmgx0/obsidian-stonks/releases/latest) into `<vault>/.obsidian/plugins/stonks/` and enable it in **Settings → Community plugins**. Release assets carry [artifact attestations](https://github.com/dmgx0/obsidian-stonks/attestations), so you can verify they were built from this repository.
 
 ## Development
 
