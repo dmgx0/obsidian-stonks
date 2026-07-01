@@ -1,7 +1,7 @@
 {
 	"id": "stonks",
 	"name": "Stonks",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"minAppVersion": "1.5.0",
 	"description": "Show live stock, ETF, and crypto prices inline as you type a ticker. Do light math on quotes to track your own portfolio right in your notes. Fetches from Yahoo Finance and works on mobile.",
 	"author": "dmgx0",

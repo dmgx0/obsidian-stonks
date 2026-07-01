@@ -4,6 +4,18 @@ All notable changes to Stonks are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project aims to
 follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2026-07-02
+
+Addresses automated review feedback from the community directory.
+
+### Changed
+
+- Release assets (`main.js`, `manifest.json`, `styles.css`) now ship with
+  GitHub artifact attestations, so their provenance can be verified against
+  this repository.
+- Removed the one `!important` in `styles.css`; the invalid-input highlight in
+  settings now wins by selector specificity instead.
+
 ## [1.0.0] - 2026-07-02
 
 First public release.

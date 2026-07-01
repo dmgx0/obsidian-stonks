@@ -1,6 +1,6 @@
 {
 	"name": "stonks",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Show live stock, ETF, and crypto prices inline in Obsidian, and do light math on quotes to track your own portfolio.",
 	"main": "main.js",
 	"type": "module",

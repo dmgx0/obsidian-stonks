@@ -48,8 +48,12 @@
 	margin-top: var(--size-4-1);
 }
 
-.stonks-input-invalid {
-	border-color: var(--text-error) !important;
+/* Element + class + state keeps this above the theme's input rules without
+   resorting to !important. */
+input.stonks-input-invalid,
+input.stonks-input-invalid:focus,
+input.stonks-input-invalid:hover {
+	border-color: var(--text-error);
 }
 
 /* Autocomplete rows: muted second line with the hint / cached price / value. */
